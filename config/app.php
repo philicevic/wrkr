@@ -52,4 +52,9 @@ return [
         App\Providers\AppServiceProvider::class,
     ],
 
+    'aliases' => [
+        'Yaml' => Symfony\Component\Yaml\Yaml::class,
+        'Workspace' => App\Workspace::class,
+    ],
+
 ];

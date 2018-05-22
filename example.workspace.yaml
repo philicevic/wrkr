@@ -1,0 +1,12 @@
+---
+
+# the path to your main workspace folder
+path: '/path/to/workspace'
+
+# You can add your own category by adding the name of the folder to the following array
+categories:
+  - Tools
+  # - TYPO3
+  # - Wordpress
+  # - Laravel
+  # - Your own category
