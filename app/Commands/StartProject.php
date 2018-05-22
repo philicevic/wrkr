@@ -4,8 +4,8 @@ namespace App\Commands;
 
 use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
-use Yaml;
 use App\Workspace;
+use Yaml;
 
 class StartProject extends Command
 {
@@ -45,12 +45,12 @@ class StartProject extends Command
                 if (in_array($this->category, Workspace::categories())) {
 
                     // Check if category folder already exists, if not, create it
-                    if (!is_dir(getenv('WORKSPACE_PATH') . "/" . $this->category)) {
-                        mkdir(getenv('WORKSPACE_PATH') . "/" . $this->category);
+                    if (!is_dir(Workspace::path() . "/" . $this->category)) {
+                        mkdir(Workspace::path() . "/" . $this->category);
                     }
 
                     // Create project folder
-                    mkdir(getenv('WORKSPACE_PATH') . "/" . $this->category . "/" . $this->argument('name'));
+                    mkdir(Workspace::path() . "/" . $this->category . "/" . $this->argument('name'));
                     return true;
 
                 } else {
@@ -64,7 +64,7 @@ class StartProject extends Command
             }
 
             // Create project folder
-            mkdir(getenv('WORKSPACE_PATH') . "/" . $this->argument('name'));
+            mkdir(Workspace::path() . "/" . $this->argument('name'));
 
             return true;
         });
